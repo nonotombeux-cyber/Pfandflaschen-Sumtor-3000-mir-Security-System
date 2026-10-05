@@ -1,0 +1,517 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #243b53, transparent 35%),
+        radial-gradient(circle at bottom right, #102a43, transparent 35%),
+        #07111c;
+
+    color: #f5f7fa;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 720px;
+
+    margin: auto;
+    padding: 25px 18px 40px;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #63d5ff;
+}
+
+h1 {
+    margin: 7px 0 5px;
+
+    font-size: 30px;
+}
+
+.header p {
+    margin: 0;
+
+    color: #91a4b5;
+
+    font-size: 14px;
+}
+
+
+/* STATUS */
+
+.status {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    background: rgba(53, 211, 137, 0.12);
+
+    color: #35d389;
+}
+
+.status-punkt {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #35d389;
+
+    box-shadow: 0 0 10px #35d389;
+}
+
+.status-aus {
+    background: rgba(255, 82, 82, 0.12);
+
+    color: #ff5252;
+}
+
+.status-aus .status-punkt {
+    background: #ff5252;
+
+    box-shadow: 0 0 10px #ff5252;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+/* CARDS */
+
+.card {
+    padding: 22px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    background: rgba(18, 32, 47, 0.88);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+}
+
+.dashboard .card {
+    margin-bottom: 0;
+}
+
+
+.card-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #8194a5;
+}
+
+
+.card h2 {
+    margin: 5px 0 15px;
+
+    font-size: 18px;
+}
+
+.card p {
+    color: #8194a5;
+
+    font-size: 13px;
+}
+
+
+/* FLASCHEN */
+
+.zahl-zeile {
+    display: flex;
+    align-items: baseline;
+
+    gap: 10px;
+}
+
+.zahl-zeile strong {
+    font-size: 48px;
+}
+
+.zahl-zeile span {
+    color: #8194a5;
+}
+
+
+.fortschritt {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #26394b;
+}
+
+#fortschrittBalken {
+    width: 0%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: #63d5ff;
+
+    transition: width 0.3s;
+}
+
+
+/* PFANDWERT */
+
+.wert-card {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.wert-card > strong {
+    font-size: 34px;
+
+    color: #35d389;
+}
+
+.untertitel {
+    margin-top: 8px;
+
+    color: #8194a5;
+
+    font-size: 12px;
+}
+
+
+/* ALARM */
+
+.alarm-card {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* SCHALTER */
+
+.schalter {
+    width: 58px;
+    height: 32px;
+
+    padding: 4px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    background: #33495c;
+}
+
+.schalter span {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transition: transform 0.2s;
+}
+
+.schalter.an {
+    background: #35d389;
+}
+
+.schalter.an span {
+    transform: translateX(26px);
+}
+
+
+/* BESTAND BUTTONS */
+
+.bestand-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.aktion {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 58px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: #172b3e;
+
+    transition: 0.2s;
+}
+
+.aktion:hover {
+    transform: translateY(-2px);
+
+    background: #20394f;
+}
+
+.aktion strong {
+    font-size: 24px;
+}
+
+.plus strong {
+    color: #35d389;
+}
+
+.minus strong {
+    color: #ff6969;
+}
+
+
+/* MELDUNG */
+
+.meldung {
+    min-height: 18px;
+
+    margin-bottom: 0;
+
+    color: #63d5ff !important;
+
+    text-align: center;
+}
+
+
+/* FORMULAR */
+
+.formular {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.formular label {
+    margin-top: 5px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    color: #9aacbb;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #2c4052;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #0d1c2a;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #63d5ff;
+
+    box-shadow: 0 0 0 3px rgba(99, 213, 255, 0.1);
+}
+
+input::placeholder {
+    color: #607487;
+}
+
+
+.entnahme-button {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: #63d5ff;
+
+    color: #07111c;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* VERLAUF */
+
+.entnahme {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.entnahme:last-child {
+    border-bottom: none;
+}
+
+.entnahme-name {
+    font-weight: bold;
+}
+
+.entnahme-details {
+    margin-top: 5px;
+
+    color: #8194a5;
+
+    font-size: 12px;
+}
+
+.entnahme-anzahl {
+    font-weight: bold;
+}
+
+.hinzu {
+    color: #35d389;
+}
+
+.entnommen {
+    color: #ff6969;
+}
+
+.leer {
+    padding: 15px 0;
+
+    color: #687d8f;
+
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding-top: 10px;
+
+    color: #52687a;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* HANDY */
+
+@media (max-width: 600px) {
+
+    .app {
+        padding: 20px 14px 35px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard .card {
+        margin-bottom: 15px;
+    }
+
+    .bestand-buttons {
+        grid-template-columns: 1fr;
+    }
+}

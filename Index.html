@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PfandWächter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="header">
+            <div>
+                <div class="logo">PFANDWÄCHTER</div>
+                <h1>Pfandverwaltung</h1>
+                <p>Übersicht und Überwachung</p>
+            </div>
+
+            <div id="alarmStatus" class="status status-an">
+                <span class="status-punkt"></span>
+                <span id="statusText">AKTIV</span>
+            </div>
+        </header>
+
+
+        <section class="dashboard">
+
+            <div class="card">
+                <span class="card-label">AKTUELLER BESTAND</span>
+
+                <div class="zahl-zeile">
+                    <strong id="flaschenAnzahl">0</strong>
+                    <span>Flaschen</span>
+                </div>
+
+                <div class="fortschritt">
+                    <div id="fortschrittBalken"></div>
+                </div>
+            </div>
+
+
+            <div class="card wert-card">
+                <span class="card-label">PFANDWERT</span>
+
+                <strong id="pfandWert">0,00 €</strong>
+
+                <span class="untertitel">
+                    0,25 € pro Flasche
+                </span>
+            </div>
+
+        </section>
+
+
+        <section class="card alarm-card">
+
+            <div>
+                <span class="card-label">ALARMSYSTEM</span>
+
+                <h2 id="alarmText">Überwachung aktiv</h2>
+
+                <p id="alarmBeschreibung">
+                    Das System überwacht den Pfandbestand.
+                </p>
+            </div>
+
+            <button
+                id="alarmButton"
+                class="schalter an"
+                onclick="alarmUmschalten()"
+            >
+                <span></span>
+            </button>
+
+        </section>
+
+
+        <section class="card">
+
+            <span class="card-label">BESTAND VERWALTEN</span>
+
+            <h2>Flaschenbestand</h2>
+
+            <div class="bestand-buttons">
+
+                <button
+                    class="aktion plus"
+                    onclick="flascheHinzufuegen()"
+                >
+                    <strong>+</strong>
+                    <span>Flasche hinzufügen</span>
+                </button>
+
+                <button
+                    class="aktion minus"
+                    onclick="flascheEntfernen()"
+                >
+                    <strong>−</strong>
+                    <span>Flasche entfernen</span>
+                </button>
+
+            </div>
+
+            <p id="bestandMeldung" class="meldung"></p>
+
+        </section>
+
+
+        <section class="card">
+
+            <span class="card-label">ENTNAHME</span>
+
+            <h2>Flaschen entnehmen</h2>
+
+            <div class="formular">
+
+                <label for="name">Name</label>
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Name eingeben"
+                    autocomplete="off"
+                >
+
+                <label for="anzahl">Anzahl</label>
+
+                <input
+                    id="anzahl"
+                    type="number"
+                    min="1"
+                    step="1"
+                    placeholder="z. B. 1"
+                >
+
+                <button
+                    class="entnahme-button"
+                    onclick="entnahmeSpeichern()"
+                >
+                    Entnahme bestätigen
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="card">
+
+            <span class="card-label">VERLAUF</span>
+
+            <h2>Letzte Änderungen</h2>
+
+            <div id="verlauf">
+
+                <div class="leer">
+                    Verlauf wird geladen...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            PFANDWÄCHTER · SCHULPROJEKT
+        </footer>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
